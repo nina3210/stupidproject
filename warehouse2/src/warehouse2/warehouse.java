@@ -57,30 +57,35 @@ public class warehouse {
 		
 		Cart testCart = new Cart(600, produktListe);
 		testCart.addToCart(buch);
-		produktListe.setShelfList(testCart.getShelfList());
-		testCart.addToCart(buch2);
-		produktListe.setShelfList(testCart.getShelfList());
-//		testCart.addToCart(buch);
-//		produktListe.setShelfList(testCart.getShelfList());
-//		produktListe.printInventory();
-		testCart.addToCart(buch3);
-		produktListe.setShelfList(testCart.getShelfList());
-		produktListe.printInventory();
-		testCart.addToCart(buch3);
-		produktListe.setShelfList(testCart.getShelfList());
-		testCart.addToCart(buch3);
-		produktListe.setShelfList(testCart.getShelfList());
-		testCart.addToCart(buch3);
-		produktListe.setShelfList(testCart.getShelfList());
-//		for (int i = 0; i < 200; i++) {
-//		testCart.addToCart(buch3);
-//			produktListe.setShelfList(testCart.getShelfList());
-//		}
-		produktListe.setShelfList(testCart.getShelfList());
-		produktListe.printInventory();
-//		
 
-//		produktListe.printInventory();
+		testCart.addToCart(buch2);
+
+		testCart.addToCart(buch);
+
+		testCart.addToCart(buch3);
+
+		testCart.addToCart(buch3);
+
+		testCart.addToCart(buch3);
+		
+		testCart.addToCart(buch3);
+		testCart.addToCart(buch3);
+		testCart.addToCart(buch3);
+		testCart.addToCart(buch3);
+
+		
+		for (int i = 0; i < 200; i++) {
+		testCart.addToCart(buch3);
+		produktListe.setShelfList(testCart.getShelfList());
+		}
+	
+		produktListe.setShelfList(testCart.getShelfList());
+		
+		//need to get most current shelf situation and      !!!!!!!!!!!!!!!!!!!!
+		// need to assemble productlist before printing     !!!!!!!!!!!!!!!!!!!!
+		produktListe.setShelfList(testCart.getShelfList());
+		produktListe.assembleProductList();
+		produktListe.printInventory();
 	}
 
 }

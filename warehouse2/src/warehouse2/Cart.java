@@ -26,46 +26,65 @@ public class Cart {
 		regalPosition = new ArrayList<String>();
 	}
 	
+//	public void addToCart(Product p) {
+//		
+//		if (load + p.getQuantity() <= size) {
+//			System.out.println(load + "hi");
+//			load = load + p.getQuantity();
+//			loadedProducts.add(p);
+//			System.out.println(Arrays.toString(loadedProducts.toArray()));
+//			return;
+//		}
+//		else (load + p.getQuantity() > size) {
+//			productListe.printInventory();
+//			for (Product pa : loadedProducts) {
+//			putOnShelves(pa);
+//			}
+//
+//			loadedProducts.clear();
+//
+//			for (int i = 0; i<fachHoehePosition.size(); i++) {
+//				System.out.println("Shelves in order " + regalPosition.get(i) + " Compartments in order:" + fachHoehePosition.get(i) + " " + fachWeitePosition.get(i));
+//			}
+//			fachHoehePosition.clear();
+//			fachWeitePosition.clear();
+//			regalPosition.clear();
+//
+//		}
+//
+//		productListe.assembleProductList();
+//		loadedProducts.add(p);
+//		load = p.getQuantity();
+//
+//	}
+	
 	public void addToCart(Product p) {
 		
-		if (load + p.getQuantity() <= size) {
-			System.out.println(load + "hi");
+		if (load +p.getQuantity()<size) {
 			load = load + p.getQuantity();
+			//System.out.println(load);
 			loadedProducts.add(p);
-			System.out.println(Arrays.toString(loadedProducts.toArray()));
-			return;
 		}
 		
-		else if (load + p.getQuantity() > size) {
-			System.out.println(load);
-			System.out.println(loadedProducts.toString());
-			productListe.printInventory();
-			for (Product pa : loadedProducts) {
-			putOnShelves(pa);
-//			productListe.assembleProductList();
-			productListe.printInventory();
-
-			}
-			for (Shelves s : regale) {
-				s.getPositions(2);
+		else if (load +p.getQuantity() >= size) {
+		//	System.out.println("blob");
+			for (Product lp : loadedProducts) {
+				putOnShelves(lp);
 			}
 			loadedProducts.clear();
-			
-			load = p.getQuantity();
-			
+			load = 0;
 			for (int i = 0; i<fachHoehePosition.size(); i++) {
 				System.out.println("Shelves in order " + regalPosition.get(i) + " Compartments in order:" + fachHoehePosition.get(i) + " " + fachWeitePosition.get(i));
 			}
 			fachHoehePosition.clear();
 			fachWeitePosition.clear();
 			regalPosition.clear();
-			
-		}
-		loadedProducts.add(p);
-		productListe.assembleProductList();
+			loadedProducts.add(p);
+			load = p.getQuantity();
 
+		}
 	}
-	
+
 	public List<Shelves> getShelfList() {
 		return this.regale;
 	}
@@ -85,11 +104,10 @@ public class Cart {
 						if (s.getProduct(i, j).getProductName().equals("leer") && (s.getCompartmentSpace(i)> lp.getQuantity())){
 
 							s.putProduct(i, j, lp);
-							System.out.println(s.getProduct(i, j).getQuantity());
+						//	System.out.println(s.getProduct(i, j).getQuantity());
 							fachWeitePosition.add(j);
 							fachHoehePosition.add(i);
 							regalPosition.add(s.getShelfID());
-//							productListe.assembleProductList();
 							return;
 							}
 							

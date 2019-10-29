@@ -71,7 +71,7 @@ public class BigShelf implements Shelves{
 		for (int i = 0; i <height; i++) {
 			for (int j = 0; j < width; j++) {
 				if (getProduct(i, j).getID() == prodid) {
-					System.out.println( "Hier :" + getShelfID() + " " + i + j);
+					System.out.println( "Hier :" + getShelfID() + " " + i + " " +j);
 				}
 			}
 		}

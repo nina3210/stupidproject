@@ -68,9 +68,7 @@ public class ProductList {
 					iD= 0;
 					
 					lister = shelf.getProduct(i, j);
-					if (lister.getID() != 0) {
-						System.out.println(lister.toString());
-					}
+
 					iD = lister.getID();
 					if (!lister.getProductName().equals("leer")) {
 						if (productListe.containsKey(iD) == false) {
@@ -89,17 +87,6 @@ public class ProductList {
 		}
 	}
 	
-//	public void assembleProductList() {
-//		for (Shelves s : regale) {
-//			for (int i = 0; i<s.getHeight();i++) {
-//				for (int j = 0; j<s.getWidth(); j++) {
-//					if (s.getProduct(i, j).getID() != 0) {
-//						System.out.println("blob" + s.getProduct(i, j).getID());
-//					}
-//				}
-//			}
-//		}
-//	}
 	
 	
 	
