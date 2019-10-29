@@ -118,4 +118,14 @@ public class Midshelf implements Shelves{
 	public String getShelfID() {
 		return "Regalposition " + "X: " + xDistance + " Y: " + yDistance;
 	}
+	
+	public void getPositions(int prodid) {
+		for (int i = 0; i <height; i++) {
+			for (int j = 0; j < width; j++) {
+				if (getProduct(i, j).getID() == prodid) {
+					System.out.println( "Hier :" + getShelfID() + " " +i + j);
+				}
+			}
+		}
+	}
 }

@@ -60,9 +60,9 @@ public class warehouse {
 		produktListe.setShelfList(testCart.getShelfList());
 		testCart.addToCart(buch2);
 		produktListe.setShelfList(testCart.getShelfList());
-		testCart.addToCart(buch);
-		produktListe.setShelfList(testCart.getShelfList());
-		produktListe.printInventory();
+//		testCart.addToCart(buch);
+//		produktListe.setShelfList(testCart.getShelfList());
+//		produktListe.printInventory();
 		testCart.addToCart(buch3);
 		produktListe.setShelfList(testCart.getShelfList());
 		produktListe.printInventory();
@@ -70,14 +70,16 @@ public class warehouse {
 		produktListe.setShelfList(testCart.getShelfList());
 		testCart.addToCart(buch3);
 		produktListe.setShelfList(testCart.getShelfList());
-		for (int i = 0; i < 200; i++) {
 		testCart.addToCart(buch3);
-			produktListe.setShelfList(testCart.getShelfList());
-		}
-		produktListe.printInventory();
-		
 		produktListe.setShelfList(testCart.getShelfList());
-		produktListe.printInventory();
+//		for (int i = 0; i < 200; i++) {
+//		testCart.addToCart(buch3);
+//			produktListe.setShelfList(testCart.getShelfList());
+//		}
+//		produktListe.printInventory();
+//		
+//		produktListe.setShelfList(testCart.getShelfList());
+//		produktListe.printInventory();
 	}
 
 }

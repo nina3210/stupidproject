@@ -57,7 +57,7 @@ public class Order {
 		}
 		
 		else {
-			System.out.println("Sorry, zu wenige da!");
+			System.out.println("Sorry, too few available!");
 		}
 		
 	}

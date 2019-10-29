@@ -62,8 +62,6 @@ public class ProductList {
 	public void assembleProductList() {
 		for (Shelves shelf : regale) {
 				
-//			//geht alle Regale durch, falls ein Product noch nicht vorhanden ist, schreibt es es, mit seiner Menge in die Liste
-//			//sonst ersetzt es es und addiert den neuen Bestand hinzu
 
 			for (int i = 0; i < shelf.getHeight(); i++) {
 				for (int j = 0; j < shelf.getWidth(); j++) {

@@ -60,7 +60,7 @@ public class TempShelf implements Shelves{
 		if ( i == 11 && p.getQuantity() <= 120) {
 			regal[i] = p;
 		}
-		else System.out.println("Menge zu groß!" + p.getQuantity());
+		else System.out.println("Size too big!" + p.getQuantity());
 	}
 	
 	public double getRelDistance() {
@@ -126,6 +126,16 @@ public class TempShelf implements Shelves{
 	
 	public String getShelfID() {
 		return "Regalposition " + "X: " + xDistance + " Y: " + yDistance;
+	}
+	
+	public void getPositions(int prodid) {
+		for (int i = 0; i <height; i++) {
+			for (int j = 0; j < width; j++) {
+				if (getProduct(i, j).getID() == prodid) {
+					System.out.println( "Hier :" + getShelfID() + " "+i + j);
+				}
+			}
+		}
 	}
 
 }

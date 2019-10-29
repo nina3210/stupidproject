@@ -10,4 +10,5 @@ public interface Shelves {
 	public double getRelDistance();
 	public double getCompartmentSpace(int x);
 	public String getShelfID();
+	public void getPositions(int i);
 }

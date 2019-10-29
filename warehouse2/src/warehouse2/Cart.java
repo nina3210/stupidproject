@@ -39,26 +39,31 @@ public class Cart {
 		else if (load + p.getQuantity() > size) {
 			System.out.println(load);
 			System.out.println(loadedProducts.toString());
+			productListe.printInventory();
 			for (Product pa : loadedProducts) {
 			putOnShelves(pa);
 			productListe.assembleProductList();
+			productListe.printInventory();
 
 			}
+			for (Shelves s : regale) {
+				s.getPositions(2);
+			}
 			loadedProducts.clear();
-			System.out.println(loadedProducts.toString());
 			
 			load = p.getQuantity();
 			
-//			for (int i = 0; i<fachHoehePosition.size(); i++) {
-//				System.out.println("Shelves in order " + regalPosition.get(i) + " Compartments in order:" + fachHoehePosition.get(i) + " " + fachWeitePosition.get(i));
-//			}
+			for (int i = 0; i<fachHoehePosition.size(); i++) {
+				System.out.println("Shelves in order " + regalPosition.get(i) + " Compartments in order:" + fachHoehePosition.get(i) + " " + fachWeitePosition.get(i));
+			}
 			fachHoehePosition.clear();
 			fachWeitePosition.clear();
 			regalPosition.clear();
 			
 		}
 		loadedProducts.add(p);
-		System.out.println(load);
+
+
 	}
 	
 	public List<Shelves> getShelfList() {
@@ -68,18 +73,19 @@ public class Cart {
 	
 
 	public void putOnShelves(Product lp) {
-
+		Boolean done = false;
 			for (Shelves s : regale) {
+
 
 			if (s instanceof HighFreqShelf == false) {
 
 				for (int i = 0; i < s.getHeight(); i++) {
 
 					for (int j = 0; j <s.getWidth(); j++) {
-						if (s.getProduct(i, j).getProductName().equals("leer")){
-						if(s.getCompartmentSpace(i)> lp.getQuantity()) {
-							s.putProduct(i, j, lp);
+						if (s.getProduct(i, j).getProductName().equals("leer") && (s.getCompartmentSpace(i)> lp.getQuantity())){
 
+							s.putProduct(i, j, lp);
+							System.out.println(s.getProduct(i, j).getQuantity());
 							fachWeitePosition.add(j);
 							fachHoehePosition.add(i);
 							regalPosition.add(s.getShelfID());
@@ -133,4 +139,4 @@ public class Cart {
 	
 	
 
-}
+
