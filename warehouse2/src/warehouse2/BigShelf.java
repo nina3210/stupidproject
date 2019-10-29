@@ -21,7 +21,7 @@ public class BigShelf implements Shelves{
 		this.width 		= 40;
 		regal = new Product[this.height	][this.width ];
 		
-		Product tester = new Product(77, "es", "klappt", 0, false);
+		//Product tester = new Product(77, "es", "klappt", 0, false);
 		
 		
 		for (int i = 0; i< height; i++) {
@@ -29,7 +29,7 @@ public class BigShelf implements Shelves{
 				regal[i][j] = new Product(0, "leer", "leer", 0, false);
 			}
 		}
-		regal[2][0] = tester;
+		//regal[2][0] = tester;
 	}
 	
 	public void putProduct (int x, int y, Product p) {

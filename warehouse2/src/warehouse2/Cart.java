@@ -42,7 +42,7 @@ public class Cart {
 			productListe.printInventory();
 			for (Product pa : loadedProducts) {
 			putOnShelves(pa);
-			productListe.assembleProductList();
+//			productListe.assembleProductList();
 			productListe.printInventory();
 
 			}
@@ -62,7 +62,7 @@ public class Cart {
 			
 		}
 		loadedProducts.add(p);
-
+		productListe.assembleProductList();
 
 	}
 	
@@ -89,7 +89,7 @@ public class Cart {
 							fachWeitePosition.add(j);
 							fachHoehePosition.add(i);
 							regalPosition.add(s.getShelfID());
-							productListe.assembleProductList();
+//							productListe.assembleProductList();
 							return;
 							}
 							

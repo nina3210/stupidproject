@@ -22,7 +22,7 @@
 			this.width 		= 7;
 			regal = new Product[this.height	][this.width ];
 			
-			Product tester = new Product(77, "es", "klappt", 0, true);
+			//Product tester = new Product(77, "es", "klappt", 0, true);
 			
 			
 			for (int i = 0; i< height; i++) {
@@ -30,7 +30,7 @@
 					regal[i][j] = new Product(0, "leer", "leer", 0, true);
 				}
 			}
-			regal[2][0] = tester;
+			//regal[2][0] = tester;
 		}
 		
 	public void putProduct (int x, int y, Product p){

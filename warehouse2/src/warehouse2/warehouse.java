@@ -76,9 +76,10 @@ public class warehouse {
 //		testCart.addToCart(buch3);
 //			produktListe.setShelfList(testCart.getShelfList());
 //		}
-//		produktListe.printInventory();
+		produktListe.setShelfList(testCart.getShelfList());
+		produktListe.printInventory();
 //		
-//		produktListe.setShelfList(testCart.getShelfList());
+
 //		produktListe.printInventory();
 	}
 

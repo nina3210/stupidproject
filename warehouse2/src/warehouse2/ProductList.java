@@ -15,7 +15,6 @@ public class ProductList {
 		regale = new ArrayList<Shelves>();
 		lister = new Product(0, "leer", "leer", 0, false);
 
-		Integer iD;
 		
 		//regale.add(new Midshelf(8, 12, 100, 22, 33) );
 
@@ -60,23 +59,27 @@ public class ProductList {
 	}
 	
 	public void assembleProductList() {
+		int iD = 0;
 		for (Shelves shelf : regale) {
 				
 
 			for (int i = 0; i < shelf.getHeight(); i++) {
 				for (int j = 0; j < shelf.getWidth(); j++) {
+					iD= 0;
+					
 					lister = shelf.getProduct(i, j);
+					if (lister.getID() != 0) {
+						System.out.println(lister.toString());
+					}
 					iD = lister.getID();
-
 					if (!lister.getProductName().equals("leer")) {
-
 						if (productListe.containsKey(iD) == false) {
 							productListe.put(lister.getID(), lister.getQuantity());
 						}
 					else if (productListe.containsKey(iD) == true) {
 					int currentQuantity = productListe.get(iD);
 					productListe.put(iD, (currentQuantity+lister.getQuantity()));
-
+					
 					}
 					}
 				}
@@ -85,6 +88,18 @@ public class ProductList {
 
 		}
 	}
+	
+//	public void assembleProductList() {
+//		for (Shelves s : regale) {
+//			for (int i = 0; i<s.getHeight();i++) {
+//				for (int j = 0; j<s.getWidth(); j++) {
+//					if (s.getProduct(i, j).getID() != 0) {
+//						System.out.println("blob" + s.getProduct(i, j).getID());
+//					}
+//				}
+//			}
+//		}
+//	}
 	
 	
 	

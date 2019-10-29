@@ -25,7 +25,7 @@ public class Midshelf implements Shelves{
 		this.height		= x;
 		this.width 		= y;
 		
-		Product tester = new Product(77, "es", "klappt", 0, false);
+		//Product tester = new Product(77, "es", "klappt", 0, false);
 		
 		
 		for (int i = 0; i< height; i++) {
@@ -33,7 +33,7 @@ public class Midshelf implements Shelves{
 				regal[i][j] = new Product(0, "leer", "leer", 0, false);
 			}
 		}
-		regal[2][0] = tester;
+		//regal[2][0] = tester;
 	}
 	
 	public void putProduct (int x, int y, Product p) {
